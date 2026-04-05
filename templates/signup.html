@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+</head>
+<body>
+    <h2>Signup</h2>
+
+<form method="POST">
+    <input type="email" name="email" placeholder="Enter Email"><br><br>
+    <input type="password" name="password" placeholder="Enter Password"><br><br>
+    <input type="password" name="confirm" placeholder="Confirm Password"><br><br>
+    <button type="submit">Signup</button>
+</form>
+
+<a href="/">Go to Login</a>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for msg in messages %}
+            <p style="color:green;">{{ msg }}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</body>
+</html>
